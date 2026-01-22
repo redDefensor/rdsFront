@@ -1,6 +1,6 @@
 const Featured = () => {
   return (
-    <main className='w-3/4 my-0 mx-auto mt-4 mb-4 border-b border-gray-800 pb-4'>
+    <main className='max-w-[1200px] w-3/4 my-0 mx-auto mt-4 mb-4 border-b border-gray-800 pb-4'>
       <h2 className='text-xl font-bold mb-4 text-light bg-gray-950 pl-2 border-l-2 border-primary'>Noticias</h2>
       <div className='grid grid-cols-3 gap-4'>
         <article>

@@ -3,7 +3,7 @@ import Featured from '../../components/organisms/Featured'
 const Home = () => {
   return (
     <>
-      <main className='w-3/4 my-0 mx-auto flex gap-4 py-4 border-b border-gray-800'>
+      <main className='max-w-[1200px] w-3/4 my-0 mx-auto flex gap-4 py-4 border-b border-gray-800'>
         <section className='w-4/6'>
           <article className='w-full relative'>
             <span className='absolute left-4 top-4 bg-primary text-light px-2 rounded-sm'>Destacada</span>
