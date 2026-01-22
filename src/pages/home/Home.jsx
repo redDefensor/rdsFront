@@ -17,7 +17,7 @@ const Home = () => {
         <aside className='w-2/6 border border-gray-800 rounded-2xl p-4 flex flex-col justify-center'>
           <h2 className='text-light border-l-2 border-primary pl-4 bg-gray-950'>Destacadas</h2>
           <ul className='mt-4 flex flex-col gap-5'>
-            <li className='flex items-center border-b border-gray-800 pb-4'>
+            <li className='flex items-center gap-2 border-b border-gray-800 pb-4'>
               <p className='text-light text-sm flex flex-col'>Fiscalía y delegación de EEUU hablan para fortalecer el combate al narcotráfico<span className='text-[12px] text-gray-400 mt-2'>12/ene/2025</span></p>
               <img src='https://erbol.com.bo/sites/default/files/fiscalia-eeuu.jpg' alt='' className='h-[100px] w-[100px] object-cover hover:scale-110 transition-all' />
             </li>
