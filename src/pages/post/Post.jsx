@@ -8,10 +8,9 @@ const Post = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch(`http://localhost:3000/posts/${id}`)
+    fetch(`https://rds-production-f5c8.up.railway.app/posts/${id}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setPost(data)
       })
       .catch(err => console.log(err))
@@ -27,10 +26,9 @@ const Post = () => {
   }
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts')
+    fetch('https://rds-production-f5c8.up.railway.app/posts')
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setPosts(shuffleArray(data))
       })
       .catch(err => console.log(err))

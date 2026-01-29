@@ -4,10 +4,9 @@ const FeaturedSport = () => {
   const [featured, setFeatured] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts/tag/sports')
+    fetch('https://rds-production-f5c8.up.railway.app/posts/tag/sports')
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setFeatured(data)
       })
       .catch(err => console.log(err))

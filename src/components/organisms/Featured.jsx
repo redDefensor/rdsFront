@@ -4,10 +4,9 @@ const Featured = () => {
   const [featured, setFeatured] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts/tag/featured')
+    fetch('https://rds-production-f5c8.up.railway.app/posts/tag/featured')
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setFeatured(data)
       })
       .catch(err => console.log(err))

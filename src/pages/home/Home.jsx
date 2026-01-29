@@ -8,7 +8,7 @@ const Home = () => {
   const [featured, setFeatured] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts/tag/principal')
+    fetch('https://rds-production-f5c8.up.railway.app/posts/tag/principal')
       .then(res => res.json())
       .then(data => {
         console.log(data)
