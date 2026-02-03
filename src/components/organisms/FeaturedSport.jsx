@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
 
 const FeaturedSport = () => {
+  const URL = import.meta.env.VITE_API_URL
   const [featured, setFeatured] = useState([])
 
   useEffect(() => {
-    fetch('https://rds-production-f5c8.up.railway.app/posts/tag/sports')
+    fetch(`${URL}/posts/tag/sports`)
       .then(res => res.json())
       .then(data => {
         setFeatured(data)
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [URL])
 
   return (
     <main className='max-w-[1200px] w-3/4 my-0 mx-auto mt-4 mb-4 border-b border-gray-800 pb-4'>
