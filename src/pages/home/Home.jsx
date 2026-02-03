@@ -4,24 +4,23 @@ import FeaturedSport from '../../components/organisms/FeaturedSport'
 import Video from '../../components/organisms/Video'
 
 const Home = () => {
+  const URL = import.meta.env.VITE_API_URL
   const [hero, setHero] = useState([])
   const [featured, setFeatured] = useState([])
 
   useEffect(() => {
-    fetch('https://rds-production-f5c8.up.railway.app/posts/tag/principal')
+    fetch(`${URL}/posts/tag/principal`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setHero(data)
       })
       .catch(err => console.log(err))
   }, [])
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts/tag/featured')
+    fetch(`${URL}/posts/tag/featured`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setFeatured(data)
       })
       .catch(err => console.log(err))

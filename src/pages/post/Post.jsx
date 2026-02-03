@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react'
 import QR from '../../assets/qr.png'
 import { useParams } from 'react-router'
+import ReactPlayer from 'react-player'
 
 const Post = () => {
+  const URL = import.meta.env.VITE_API_URL
   const { id } = useParams()
   const [post, setPost] = useState(null)
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch(`https://rds-production-f5c8.up.railway.app/posts/${id}`)
+    fetch(`${URL}/posts/${id}`)
       .then(res => res.json())
       .then(data => {
         setPost(data)
       })
       .catch(err => console.log(err))
-  }, [id])
+  }, [id, URL])
 
   const shuffleArray = (array) => {
     const shuffled = [...array]
@@ -26,13 +28,13 @@ const Post = () => {
   }
 
   useEffect(() => {
-    fetch('https://rds-production-f5c8.up.railway.app/posts')
+    fetch(`${URL}/posts`)
       .then(res => res.json())
       .then(data => {
         setPosts(shuffleArray(data))
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [URL])
 
   return (
     <main className='max-w-[1200px] w-3/4 my-0 mx-auto flex gap-4 py-4 border-b border-gray-800 relative'>
@@ -59,6 +61,17 @@ const Post = () => {
                   <figure key={index} className='overflow-hidden rounded-2xl'>
                     <img className='h-full w-full object-cover' src={img} alt='' />
                   </figure>
+                ))}
+              </div>
+            )
+          }
+        </div>
+        <div className='mt-4'>
+          {
+            post?.videos?.length > 0 && (
+              <div className='flex flex-col gap-4'>
+                {post?.videos?.map((video, index) => (
+                  <ReactPlayer src={video} width='100%' height='500px' key={index} />
                 ))}
               </div>
             )
